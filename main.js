@@ -5,11 +5,11 @@ const searchButton = $('#searchBtn');
 const randomJokeBtn = $('#randomJokeBtn');
 let pageCount = 1
 
-function searchForJokes(searchTerm, pageCount) {
+function requestJokes(searchTerm, pageCount) {
     // Set the Accept header to request JSON data
     $.get(`https://icanhazdadjoke.com/search?term=${searchTerm}&page=${pageCount}`, (data) => {
         console.log(data.next_page); // Access the array of jokes in the response
-        addJokeToJokeList(data.results); // Pass the results to the display function
+        addJokesToJokeList(data.results); // Pass the results to the display function
     }, "json");
 }
 
@@ -18,41 +18,50 @@ function getRandomJoke() {
     $.get('https://icanhazdadjoke.com/', (data) => {
         console.log(data.joke);
         const joke = data.joke;
-        addJokeToJokeList([{ joke }]);
+        addJokesToJokeList([{ joke }]);
     }, 'json');
 }
 
 randomJokeBtn.click(getRandomJoke);
 
 // iterate over the array of joke objects andadd each to list
-function addJokeToJokeList(arrayOfJokes) {
+function addJokesToJokeList(arrayOfJokes) {
     //clear joke list before adding new jokes
     jokeList.empty(); 
     arrayOfJokes.forEach(jokeObj => {
         const listItem = $('<li>').text(jokeObj.joke);
         jokeList.append(listItem);
-        listItem.click(() => addJokeToFavorites(jokeObj));
+        listItem.on('click', () => {
+            addJokeToFavorites(jokeObj)
+            listItem.remove()
+        });
     });
 }
 
 // add the joke from the list to the favorites list
 function addJokeToFavorites(jokeObj) {
+
     const listItem = $('<li>').text(jokeObj.joke);
     favoritesList.append(listItem);
-    listItem.click(() => listItem.remove());
+    listItem.on('click', () => {
+        jokeList.append(jokeObj)
+        listItem.remove()
+    });
+}
+
+function searchValue(){
+    const searchTerm = searchInput.val();
+    if (searchTerm) {
+        requestJokes(searchTerm);
+    } else requestJokes(searchTerm, (pageCount< 39?pageCount++:pageCount=1))
 }
 
 // Get jokes based on the search term or top 20 jokes if no input
-searchButton.click(() => {
-    const searchTerm = searchInput.val();
-    if (searchTerm) {
-        searchForJokes(searchTerm);
-    } else searchForJokes(searchTerm, pageCount++)
-});
+searchButton.on('click', searchValue);
 
 // can press Enter key or click
-searchInput.keypress(function(event) {
+searchInput.on('keypress', (event) => {
     if (event.key === 'Enter') {
-        searchButton.click();
+        searchValue();
     }
 });

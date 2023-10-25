@@ -11,20 +11,30 @@
 <body>
     <header>
         <h1>Dad Jokes</h1>
+        <nav >
+            <ul>
+                <li id="dadJokes">Dad Jokes</li>
+                <!-- <li id="puns">Puns</li>
+                <li id="chuckNorris">Chuck Norris</li> -->
+            </ul>
+        </nav>
     </header>
     <main>
-        <div>
-            <input type="text" id="searchInput" placeholder="search for jokes">
-            <button id="searchBtn">Search</button>
-            <button id="randomJokeBtn">Random Joke</button>
+        <div class="searchContainer">
+            <input type="text" id="searchInput" placeholder="search joke topics">
+            <button id="searchBtn">Look for jokes</button>
+            <button id="randomJokeBtn">Random joke</button>
           </div>
-          <div>
-            <h2>Jokes</h2>
-            <ul id="jokeList"></ul>
-          </div>
-          <div>
-            <h2>Favorites</h2>
-            <ul id="favoritesList"></ul>
-          </div>
+         <div id="mainContainer">
+            <div>
+                <h2>Jokes</h2>
+                <ul class="container"id="jokeList"></ul>
+              </div>
+              <div>
+                <h2>Favorites</h2>
+                <ul class="container" id="favoritesList"></ul>
+              </div>
+         </div>
+        </main>
 </body>
 </html>
