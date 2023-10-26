@@ -1,40 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dad Joke Generator</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="main.css">
     <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
-  <script defer src="main.js"></script>
-    <title>Document</title>
-</head>
+    <script defer src="main.js"></script>
+  </head>
 <body>
     <header>
         <h1>Dad Jokes</h1>
-        <nav >
-            <ul>
-                <li id="dadJokes">Dad Jokes</li>
-                <!-- <li id="puns">Puns</li>
-                <li id="chuckNorris">Chuck Norris</li> -->
-            </ul>
-        </nav>
+        <div class="menuBtn">&#9776;</div>
+        <nav>
+          <ul>
+            <li id="dadJokes"><a href="#favLabel">Dad Jokes</a></li>
+            <!-- <li id="puns">Puns</li>
+            <li id="chuckNorris">Chuck Norris</li> -->
+          </ul>
+      </nav>
     </header>
     <main>
+      <div>
         <div class="searchContainer">
-            <input type="text" id="searchInput" placeholder="search joke topics">
-            <button id="searchBtn">Look for jokes</button>
-            <button id="randomJokeBtn">Random joke</button>
+          <!-- <label for="searchInput">TOPIC:</label> -->
+          <input class="jokeInput" type="text" id="searchInput" placeholder="JOKE TOPIC SEARCH" autofocus>
+          <button class="jokeInput" id="searchBtn">Look for jokes</button>
+          <button class="jokeInput" id="randomJokeBtn">Random joke</button>
+        </div>
+        <div class="mainContainer">
+          <div class="jokesContainer">
+            <h2 class="label" id="jokeLabel">JOKES</h2>
+            <ul class="ul"id="jokeList"></ul>
           </div>
-         <div id="mainContainer">
-            <div>
-                <h2>Jokes</h2>
-                <ul class="container"id="jokeList"></ul>
-              </div>
-              <div>
-                <h2>Favorites</h2>
-                <ul class="container" id="favoritesList"></ul>
-              </div>
-         </div>
-        </main>
+          <div class="favoritesContainer">
+            <h2 class="label" id="favLabel">FAVORITES</h2>
+            <ul class="ul" id="favoritesList"></ul>
+          </div>
+      </div>
+    </main>
+    <footer>
+      
+    </footer>
 </body>
 </html>
