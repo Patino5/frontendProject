@@ -14,10 +14,12 @@
 <body>
     <header>
         <h1>Dad Jokes</h1>
+        <div id="darkBtn">light/dark</div>
         <div class="menuBtn">&#9776;</div>
         <nav>
           <ul>
-            <li id="dadJokes"><a href="#favLabel">Dad Jokes</a></li>
+            <li id="dadJokes"><a href="#favLabel">JOKE FAVS</a></li>
+            <li class="favCarousel" id="openModal"><a href="#">FAVS Carousel</a></li>
             <!-- <li id="puns">Puns</li>
             <li id="chuckNorris">Chuck Norris</li> -->
           </ul>
@@ -27,7 +29,7 @@
       <div>
         <div class="searchContainer">
           <!-- <label for="searchInput">TOPIC:</label> -->
-          <input class="jokeInput" type="text" id="searchInput" placeholder="JOKE TOPIC SEARCH" autofocus>
+          <input class="jokeInput" type="text" id="searchInput" placeholder="SEARCH TOPIC" autofocus>
           <button class="jokeInput" id="searchBtn">Look for jokes</button>
           <button class="jokeInput" id="randomJokeBtn">Random joke</button>
         </div>
@@ -40,6 +42,20 @@
             <h2 class="label" id="favLabel">FAVORITES</h2>
             <ul class="ul" id="favoritesList"></ul>
           </div>
+      </div>
+      <div id="myModal" class="modal">
+        <div class="modalContent">
+          <span class="close" id="closeModalBtn">&times;</span>
+          <h2>Your Favorite Jokes</h2>
+          <div id="quoteCarousel" class="carousel">
+            <blockquote>This is a quote!</blockquote>
+            <blockquote>Another one</blockquote>
+          </div>
+          <div class="carouselControls">
+            <button class="carouselBtn"  id="prevQuote">Previous</button>
+            <button class="carouselBtn" id="nextQuote">Next</button>
+          </div>
+        </div>
       </div>
     </main>
     <footer>
