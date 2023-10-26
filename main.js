@@ -47,7 +47,7 @@ function addJokesToJokeList(arrayOfJokes) {
 // add the joke from the list to the favorites list
 function addJokeToFavorites(jokeObj) {
     const listItem = $('<li>').text(jokeObj.joke)
-    favoritesList.append(listItem)
+    favoritesList.prepend(listItem)
     listItem.on('click', () => {
         const blockquote = $('<blockquote>').text(jokeObj.joke)
         blockquote.addClass('quote')
@@ -88,8 +88,9 @@ const darkMode = () => {
     $('button').toggleClass('darkMode')
     $('li').toggleClass('darkMode')
     $('#searchContainer').toggleClass('darkMode')
+    $('.modalContent').toggleClass('darkMode')
     menuBtn.toggleClass('darkMode')
-    
+    // showQuote(index)
 }
 
 const darkBtn = $('#darkBtn')
