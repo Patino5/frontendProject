@@ -1,11 +1,9 @@
 # frontendProject
 
-Dad Joke Generator
-The Dad Joke Generator is a simple web application that allows users to discover and enjoy a collection of dad jokes. Whether you need a good laugh or want to share a groan-inducing joke with friends, this website has you covered.
+Dad Joke Generator is a simple web application that allows users to discover and enjoy a collection of dad jokes. Whether you need a good laugh or want to share a groan-inducing joke with friends, this website has you covered.
 
 Table of Contents
 Features
-Demo
 Getting Started
 Usage
 Contributing
@@ -23,7 +21,7 @@ Clone the Repository:
 
 bash
 Copy code
-git clone https://github.com/Patino5/dad-joke-generator.git
+git clone https://github.com/Patino5/frontendProject.git
 Navigate to the Project Directory:
 
 bash
