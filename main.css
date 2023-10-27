@@ -4,8 +4,8 @@ html {
     scroll-behavior: smooth;
 }
 body{
-    font-family: poppins;
-    margin: 0 auto
+    font-family: poppins sans-serif;
+    margin: 0 auto;
 }
 
 header{
@@ -113,7 +113,11 @@ li:hover {
     flex-direction: column;
     justify-content: space-between;
     padding: 0 3em;
-    margin: 0 auto
+    margin: 0 auto;
+}
+
+.label {
+    display: none;
 }
 
 #jokeList {
@@ -133,7 +137,7 @@ li:hover {
 }
 
 #darkBtn:hover {
-    font-size: 2rem;
+    font-size: 3rem;
     cursor: pointer;
     transition: all 300ms ease-in-out;
     transform: rotate(360deg);
@@ -152,12 +156,13 @@ li:hover {
   .modalContent {
     position: relative;
     color: #000;
+    font-size: 1.9rem;
     background-color: #fff;
     display:flex;
     flex-direction: column;
     align-items: center;
-    margin: 15% auto;
-    padding: 5em;
+    margin: 5em auto;
+    padding: 2em;
     width: 80%;
     border-radius: 3em;
     box-shadow: 0 0 .4em #e0e0e0;
@@ -172,9 +177,7 @@ li:hover {
   }
 
   blockquote {
-    display: contents;
-    font-size: 1.6rem;
-    padding: 2em;  
+    padding: 1em;  
     margin: 2em;
   }
   

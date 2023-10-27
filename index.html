@@ -8,13 +8,15 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
     <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
     <script defer src="main.js"></script>
   </head>
 <body>
     <header>
         <h1>Dad Jokes</h1>
-        <div id="darkBtn">light/dark</div>
+        <div id="darkBtn"><i class="fas fa-adjust"></i></div>
         <div class="menuBtn">&#9776;</div>
         <nav>
           <ul>
@@ -48,18 +50,17 @@
           <span class="close" id="closeModalBtn">&times;</span>
           <h2>Your Favorite Jokes</h2>
           <div id="quoteCarousel" class="carousel">
-            <blockquote>This is a quote!</blockquote>
-            <blockquote>Another one</blockquote>
+
           </div>
           <div class="carouselControls">
-            <button class="carouselBtn"  id="prevQuote">Previous</button>
-            <button class="carouselBtn" id="nextQuote">Next</button>
+            <button class="carouselBtn"  id="prevQuote"><i class="fas fa-arrow-left"></i></button>
+            <button class="carouselBtn" id="nextQuote"><i class="fas fa-arrow-right"></i></button>
           </div>
         </div>
       </div>
     </main>
     <footer>
-      
-    </footer>
+      <p>&copy; 2023 Dad Jokes</p>
+  </footer>
 </body>
 </html>

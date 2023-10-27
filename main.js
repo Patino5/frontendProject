@@ -22,6 +22,7 @@ function requestJokes(searchTerm, pageCount) {
 function getRandomJoke() {
     $.get('https://icanhazdadjoke.com/', (data) => {
         //console.log(data.joke);
+        $('#jokeLabel').show()
         const joke = data.joke
         addJokesToJokeList([{ joke }])
     }, 'json')
@@ -34,6 +35,7 @@ randomJokeBtn.on('click', getRandomJoke);
 function addJokesToJokeList(arrayOfJokes) {
     //clear joke list before adding new jokes
     jokeList.empty()
+    $('#jokeLabel').show()
     arrayOfJokes.forEach(jokeObj => {
         const listItem = $('<li>').text(jokeObj.joke);
         jokeList.append(listItem)
@@ -48,18 +50,18 @@ function addJokesToJokeList(arrayOfJokes) {
 function addJokeToFavorites(jokeObj) {
     const listItem = $('<li>').text(jokeObj.joke)
     favoritesList.prepend(listItem)
-    listItem.on('click', () => {
+    $('#favLabel').show()
+
+    listItem.on('dblclick', () => {
         const blockquote = $('<blockquote>').text(jokeObj.joke)
         blockquote.addClass('quote')
         $('#quoteCarousel').append(blockquote)
         favoritesCarousel.push(blockquote)
         showQuote(favoritesCarousel.length - 1)
-        // render carousel 
-    })
-    listItem.on('dblclick', () => {
         listItem.remove()
-    });
+    })
 }
+
 
 // search for joke from input and populate list if no value
 function searchValue(){
@@ -80,7 +82,7 @@ searchInput.on('keypress', (event) => {
 });
 // menu btn to show favs and carousel
 menuBtn.on('click', () => {
-    nav.toggleClass('active')
+    nav.toggleClass('active')    
 })
 
 const darkMode = () => {
@@ -90,7 +92,6 @@ const darkMode = () => {
     $('#searchContainer').toggleClass('darkMode')
     $('.modalContent').toggleClass('darkMode')
     menuBtn.toggleClass('darkMode')
-    // showQuote(index)
 }
 
 const darkBtn = $('#darkBtn')
